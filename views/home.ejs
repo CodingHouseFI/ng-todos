@@ -5,15 +5,17 @@
   <title>Todo App</title>
 
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/css/style.css">
 
   <script src="/bower_components/angular/angular.js"></script>
   <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 
-  <script src="/main.js"></script>
+  <script src="/js/module.js"></script>
+  <script src="/js/controllers.js"></script>
+  <script src="/js/services.js"></script>
 
 </head>
-<body>
+<body ng-app='todoApp' ng-controller='mainCtrl'>
   <div class="container">
     <h1 class="text-center">Todo App!</h1>
   
