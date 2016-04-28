@@ -8,7 +8,7 @@ db.run(`CREATE TABLE IF NOT EXISTS todos (
           createdAt DATETIME,
           dueDate DATETIME,
           desc TEXT,
-          isComplete BOOLEAN DEFAULT 0
+          isComplete BOOLEAN DEFAULT false
         )`);
 
 exports.get = function(cb) {
@@ -28,8 +28,8 @@ exports.create = function(todo, cb) {
     return cb('Missing required field.')
   }
   
-  var createdAt = moment().unix();
-  var dueDate = moment(todo.dueDate).unix();
+  var createdAt = moment().valueOf();
+  var dueDate = moment(todo.dueDate).valueOf();
 
   db.run('INSERT INTO todos (createdAt, dueDate, desc) VALUES (?, ?, ?)', createdAt, dueDate, todo.desc,
     (err) => {

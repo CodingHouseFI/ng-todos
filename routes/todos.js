@@ -14,7 +14,7 @@ router.route('/')
         return res.status(400).send(err);
       }
 
-      res.send(todos);
+      res.send(todos); // todos --> res.data
     });
   })
   .post((req, res) => {
